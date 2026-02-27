@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo.png">
+    <link rel="apple-touch-icon" href="assets/img/logo.png">
+
+    <!-- SEO & Metadata -->
+    <title>Vivago Digital | Web Development, App Development & Digital Solutions in Cox's Bazar, Bangladesh</title>
+    <meta name="description"
+        content="Vivago Digital is Cox's Bazar's premier digital agency specializing in custom website design, web & app development, SEO, and SaaS solutions. Transform your business with MicroCampus & LodgeOS.">
+    <meta name="keywords"
+        content="Vivago Digital, Web Development Bangladesh, App Development, Digital Agency Bangladesh, SEO Services, SaaS, MicroCampus, LodgeOS, Software Company, Custom Website Design, E-commerce Development, Digital Marketing">
+    <meta name="author" content="Vivago Digital">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://vivagodigital.com/">
+    <meta name="geo.region" content="BD-04">
+    <meta name="geo.placename" content="Cox's Bazar">
+    <meta name="geo.position" content="21.4272;92.0058">
+    <meta name="ICBM" content="21.4272, 92.0058">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vivagodigital.com/">
+    <meta property="og:title" content="Vivago Digital | Web Development & Digital Solutions in Cox's Bazar">
+    <meta property="og:description"
+        content="Transform your business with custom websites, apps, and digital solutions. Leading digital agency in Cox's Bazar offering web development, SEO, and SaaS products.">
+    <meta property="og:image" content="https://vivagodigital.com/assets/img/logo-700x380.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Vivago Digital">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vivagodigital.com/">
+    <meta property="twitter:title" content="Vivago Digital | Web Development & Digital Solutions">
+    <meta property="twitter:description"
+        content="Transform your business with custom websites, apps, and digital solutions. Leading digital agency in Cox's Bazar.">
+    <meta property="twitter:image" content="https://vivagodigital.com/assets/img/logo-700x380.png">
+    <meta property="twitter:creator" content="@vivagodigital">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Vivago Digital",
+      "description": "Premier digital agency specializing in web development, app development, SEO, and SaaS solutions",
+      "url": "https://vivagodigital.com",
+      "logo": "https://vivagodigital.com/assets/img/logo.png",
+      "image": "https://vivagodigital.com/assets/img/logo-700x380.png",
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Kazi Nowshad Abir",
+          "jobTitle": "Co-Founder & MD"
+        },
+        {
+          "@type": "Person",
+          "name": "Ahmed Imtiaz",
+          "jobTitle": "Co-Founder & CEO"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cox's Bazar",
+        "addressCountry": "BD"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/vivagodigital",
+        "https://twitter.com/vivagodigital",
+        "https://www.facebook.com/vivagodigital"
+      ],
+      "offers": {
+        "@type": "AggregateOffer",
+        "offerCount": "3",
+        "offers": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Website Design & Development",
+              "description": "Professional website design and development services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Software & App Development",
+              "description": "Custom software and mobile application development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Search Engine Optimization (SEO) & Marketing",
+              "description": "SEO services and digital marketing solutions"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/script.js" defer></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Enable class-based dark mode
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2563eb', // Vivid Blue
+                        'primary-dark': '#3b82f6', // Light Blue for Dark Mode
+                        'accent': '#06b6d4', // Cyan
+                        'dark': '#020617', // Deep Slate
+                        'light': '#f8fafc',
+                        'surface': '#ffffff'
+                    },
+                    fontFamily: {
+                        'sans': ['Outfit', 'sans-serif'],
+                        'mono': ['Space Grotesk', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(37, 99, 235, 0.15)',
+                        'glow-hover': '0 0 30px rgba(37, 99, 235, 0.3)',
+                        'card': '0 10px 30px -5px rgba(0,0,0,0.1)'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-900 dark:bg-dark dark:text-slate-100 antialiased selection:bg-primary/20 selection:text-primary-dark">
+
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-jelly"></div>
+
+    <!-- Loading Screen -->
+    <div class="loader-overlay" id="loader">
+        <div class="flex flex-col items-center gap-4">
+            <div
+                class="w-12 h-12 border-4 border-slate-200 border-t-primary rounded-full animate-spin dark:border-slate-800 dark:border-t-primary-dark">
+            </div>
+            <div class="font-mono text-xs tracking-widest text-slate-400">INITIALIZING CORE</div>
+        </div>
+    </div>
+
+    <!-- Liquid Background Canvas -->
+    <canvas id="liquidCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex justify-between items-center shadow-sm">
+            <a href="#" class="flex items-center gap-2 group hover-trigger">
+                <div class="w-32 h-8 rounded-lg flex items-center justify-center text-white font-bold text-lg"><img
+                        id="nav-logo" src="assets/img/black-text-logo.png" alt="Vivago Digital Logo"></div>
+                <!-- <span class="font-bold text-xl tracking-tight text-slate-800 dark:text-white">VIVAGO DIGITAL</span> -->
+            </a>
+
+            <div class="hidden md:flex items-center gap-1 font-medium text-sm text-slate-600 dark:text-slate-300">
+                <a href="index.html#about"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">About</a>
+                <a href="index.html#services"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Services</a>
+                <a href="index.html#projects"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Projects</a>
+                <a href="index.html#products"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Products</a>
+                <a href="team.html"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Team</a>
+                <a href="blogs.html"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Blogs</a>
+                <div class="w-px h-4 bg-slate-200 dark:bg-slate-700 mx-2"></div>
+
+                <!-- Dark Mode Toggle -->
+                <button id="themeToggle"
+                    class="hover-trigger magnetic-btn p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-all mr-2">
+                    <!-- Sun Icon (Visible in Dark Mode) -->
+                    <svg id="sunIcon" class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                        </path>
+                    </svg>
+                    <!-- Moon Icon (Hidden in Dark Mode) -->
+                    <svg id="moonIcon" class="w-5 h-5 text-slate-600 dark:text-slate-300 hidden" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                        </path>
+                    </svg>
+                </button>
+
+                <a href="contact-us.html"><button onclick="document.getElementById('contact').scrollIntoView()"
+                        class="hover-trigger magnetic-btn px-6 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full hover:bg-primary dark:hover:bg-primary-dark hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300 font-medium nav-desktop-item">
+                        Start Project
+                    </button></a>
+            </div>
+
+            <button class="md:hidden text-slate-800 dark:text-white" onclick="toggleMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+        class="fixed inset-0 z-40 bg-white/95 dark:bg-dark/95 backdrop-blur-xl -translate-y-full transition-transform duration-500 flex items-start justify-center pt-24">
+        <button class="absolute top-8 right-8 text-slate-800 dark:text-white" onclick="toggleMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="flex flex-col gap-8 text-center text-3xl font-bold text-slate-800 dark:text-white">
+            <a href="index.html#about" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">About</a>
+            <a href="index.html#services" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">Services</a>
+            <a href="index.html#projects" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">Projects</a>
+            <a href="index.html#products" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">Products</a>
+            <a href="team.html" onclick="toggleMenu()" class="hover:text-primary transition-colors menu-item">Team</a>
+            <a href="blogs.html" onclick="toggleMenu()" class="hover:text-primary transition-colors menu-item">Blogs</a>
+            <a href="contact-us.html" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">Contact</a>
+            <button onclick="toggleTheme(); toggleMenu()"
+                class="text-lg font-medium text-slate-500 dark:text-slate-400 menu-item">Switch Theme</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 hero-grid-bg z-0 pointer-events-none"></div>
+        <div class="glow-point top-20 left-20"></div>
+        <div class="glow-point bottom-20 right-20 bg-accent/20"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Left Content -->
+                <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+                    <div
+                        class=" hidden inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 mb-8 hero-anim">
+                        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        <span
+                            class="text-xs font-mono font-bold text-slate-600 dark:text-slate-300 tracking-wider">VIVAGO
+                            V2.0 LIVE</span>
+                    </div>
+
+                    <h1
+                        class="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[0.95] mb-8">
+                        <div class="overflow-hidden"><span class="hero-gradient-text hero-anim block">Thinking</span>
+                        </div>
+                        <div class="overflow-hidden"><span
+                                class="text-slate-800 dark:text-slate-200 hero-anim block">Beyond Code.</span></div>
+                    </h1>
+
+                    <p
+                        class="hero-anim text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed mb-10 font-medium">
+                        We don't just build software; we engineer digital ecosystems. From <span
+                            class="text-primary dark:text-primary-dark font-bold">bespoke web architectures</span> to
+                        <span class="text-accent font-bold">scalable SaaS solutions</span>, Vivago Digital is the engine
+                        behind your next breakthrough.
+                    </p>
+
+                    <div class="hero-anim flex flex-col sm:flex-row items-center gap-4">
+                        <a href="#contact"
+                            class="hover-trigger magnetic-btn group relative px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-bold overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-primary/20 transition-all">
+                            <span class="relative z-10 flex items-center gap-2">
+                                Start Collaboration
+                                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </span>
+                            <div
+                                class="absolute inset-0 bg-primary transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-out">
+                            </div>
+                        </a>
+                        <a href="#projects"
+                            class="hover-trigger magnetic-btn px-8 py-4 text-slate-700 dark:text-slate-300 font-bold hover:text-primary dark:hover:text-white transition-colors flex items-center gap-2">
+                            Explore Portfolio <span class="text-xs font-mono opacity-50">↓</span>
+                        </a>
+                    </div>
+
+                    <!-- Tech Stack Strip -->
+                    <div class="hero-anim mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 w-full max-w-lg">
+                        <p class="text-xs font-mono text-slate-400 mb-4 uppercase tracking-widest">Powering Solutions
+                            With</p>
+                        <div
+                            class="flex flex-wrap gap-4 items-center justify-center lg:justify-start opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                            <!-- Simple SVG Icons for Tech Stack -->
+                            <div class="flex items-center gap-1"><svg class="h-5 w-auto" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path d="M12 2L2 19.7h20L12 2zm1 14.5h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+                                </svg><span class="font-bold text-slate-500 text-sm">Next.js</span></div>
+                            <div class="flex items-center gap-1"><span
+                                    class="font-bold text-slate-500 text-sm">React</span></div>
+                            <div class="flex items-center gap-1"><span
+                                    class="font-bold text-slate-500 text-sm">Node</span></div>
+                            <div class="flex items-center gap-1"><span
+                                    class="font-bold text-slate-500 text-sm">AWS</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual: Interactive Service Stack -->
+                <div class="lg:col-span-5 relative hidden lg:block hero-anim">
+                    <div class="stack-container">
+
+                        <!-- Card 1: Web Engineering -->
+                        <div class="stack-card" data-pos="0">
+                            <div>
+                                <div
+                                    class="card-icon-box bg-blue-100 text-blue-600 dark:bg-blue-900/40 dark:text-blue-400">
+                                    <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                    </svg>
+                                </div>
+                                <h3 class="card-title">Web <br>Engineering</h3>
+                                <p class="card-desc">High-performance, scalable web architectures built for speed and
+                                    SEO dominance.</p>
+                            </div>
+                            <div class="card-tags">
+                                <span class="card-tag">Next.js</span>
+                                <span class="card-tag">React</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: App Ecosystems -->
+                        <div class="stack-card" data-pos="1">
+                            <div>
+                                <div
+                                    class="card-icon-box bg-purple-100 text-purple-600 dark:bg-purple-900/40 dark:text-purple-400">
+                                    <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <h3 class="card-title">App <br>Ecosystems</h3>
+                                <p class="card-desc">Cross-platform mobile solutions that provide seamless user
+                                    experiences on any device.</p>
+                            </div>
+                            <div class="card-tags">
+                                <span class="card-tag">Flutter</span>
+                                <span class="card-tag">Native</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Digital Growth -->
+                        <div class="stack-card" data-pos="2">
+                            <div>
+                                <div
+                                    class="card-icon-box bg-teal-100 text-teal-600 dark:bg-teal-900/40 dark:text-teal-400">
+                                    <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                    </svg>
+                                </div>
+                                <h3 class="card-title">Digital <br>Growth</h3>
+                                <p class="card-desc">Data-driven SEO strategies and campaigns to maximize your digital
+                                    ROI.</p>
+                            </div>
+                            <div class="card-tags">
+                                <span class="card-tag">SEO</span>
+                                <span class="card-tag">Analytics</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Helper Text -->
+                    <div class="text-center mt-12 opacity-40 text-xs font-mono uppercase tracking-widest animate-pulse">
+                        Click cards to shuffle
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Scroll Indicator (Kept) -->
+        <div
+            class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50 dark:text-white hidden lg:block">
+            <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white/80 dark:bg-slate-900/50 relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2 reveal-up">
+                    <div
+                        class="inline-block p-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 mb-8 relative">
+                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full animate-ping opacity-20">
+                        </div>
+                        <div class="text-4xl font-bold text-primary dark:text-primary-dark">Who We Are</div>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
+                        Your Vision, <br>Our Innovation.
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg mb-4 leading-relaxed font-medium">
+                        Bringing your brand to life in the digital world.
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg mb-6 leading-relaxed">
+                        At Vivago Digital, we believe that every pixel counts and every line of code serves a purpose.
+                        What started as a shared vision between co-founders Kazi Nowshad Abir and Ahmed Imtiaz has grown
+                        into one of Bangladesh's most dynamic digital agencies.
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg mb-6 leading-relaxed">
+                        We understand the challenges of modern business because we are entrepreneurs ourselves. That's
+                        why we don't offer cookie-cutter solutions. Whether you need a high-converting e-commerce
+                        website, a custom software solution to streamline your operations, or a branding strategy that
+                        makes you unforgettable, we tailor our approach to fit your specific goals.
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg mb-8 leading-relaxed">
+                        We are a team of dreamers and doers, passionate about helping you navigate the digital landscape
+                        with confidence.
+                    </p>
+
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Our Core Services:</h3>
+                        <ul class="space-y-2 text-slate-600 dark:text-slate-400 text-lg">
+                            <li class="flex items-start gap-2">
+                                <span class="text-primary dark:text-primary-dark mt-1">•</span>
+                                <span>Custom Website Design & Development</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-primary dark:text-primary-dark mt-1">•</span>
+                                <span>Software & App Development</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-primary dark:text-primary-dark mt-1">•</span>
+                                <span>Search Engine Optimization (SEO) & Marketing</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="flex gap-8 border-t border-slate-100 dark:border-slate-800 pt-8">
+                        <div>
+                            <div class="text-3xl font-bold text-slate-900 dark:text-white">11+</div>
+                            <div class="text-sm text-slate-500 dark:text-slate-400">Months Exp.</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-slate-900 dark:text-white">100%</div>
+                            <div class="text-sm text-slate-500 dark:text-slate-400">Commitment</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative reveal-up">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl transform rotate-6 scale-95 blur-xl">
+                    </div>
+                    <div
+                        class="relative bg-slate-900 rounded-3xl p-8 shadow-2xl overflow-hidden aspect-video flex items-center justify-center group">
+                        <!-- Abstract Code Representation -->
+                        <div class="space-y-2 w-full max-w-sm opacity-50 group-hover:opacity-80 transition-opacity">
+                            <img src="assets/img/logo.png" alt="Vivago Digital - Digital Innovation Agency">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS GRID SECTION -->
+    <section id="projects" class="bg-white dark:bg-slate-900 relative overflow-hidden pb-32">
+        <!-- Gradient overlay (light & dark) -->
+        <div
+            class="absolute inset-0 pointer-events-none z-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent dark:from-slate-900/90 dark:via-slate-800/70">
+        </div>
+        <div class="relative z-10">
+
+            <!-- Section Header -->
+            <div class="py-24 text-center">
+                <span
+                    class="font-mono text-primary text-sm font-bold tracking-widest uppercase mb-4 block reveal-up">Selected
+                    Works</span>
+                <h2 class="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6 reveal-up">Digital
+                    Masterpieces</h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto text-lg reveal-up">
+                    A curated selection of our most impactful deployments.
+                </p>
+            </div>
+
+            <div class="container mx-auto px-6 pb-20">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+                    <!-- Project 1: Salahuddin -->
+                    <div
+                        class="group relative bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-white/10 shadow-2xl overflow-hidden flex flex-col reveal-up">
+                        <!-- Image Area -->
+                        <div class="relative h-64 lg:h-80 overflow-hidden cursor-none">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-green-900/50 to-slate-900 transition-transform duration-700 group-hover:scale-105">
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <img src="assets/img/salahuddin.webp" alt="" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <!-- Content Area -->
+                        <div class="p-8 flex flex-col flex-grow bg-white dark:bg-slate-800 relative z-10">
+                            <span class="text-primary font-mono text-xs tracking-widest mb-3">01 / POLITICAL
+                                CAMPAIGN</span>
+                            <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Salahuddin Portfolio</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed flex-grow">
+                                A high-impact personal brand website for a political figure. Features dynamic campaign
+                                management tools, donation integration, and a rich media gallery.
+                            </p>
+                            <div class="flex items-center justify-between border-t border-white/10 pt-6 mt-auto">
+                                <ul class="flex gap-2">
+                                    <li
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] text-slate-500 dark:text-slate-300 border border-black/10">
+                                        Next.js</li>
+                                    <li
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] text-slate-500 dark:text-slate-300 border border-black/10">
+                                        Tailwind</li>
+                                </ul>
+                                <a href="Case-Study/salahuddinbabu.html"
+                                    class="hover-trigger text-slate-900 dark:text-white font-bold text-sm hover:text-primary transition-colors flex items-center gap-2">
+                                    View Case Study <span class="text-lg">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: iDEAGO -->
+                    <div
+                        class="group relative bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-white/10 shadow-2xl overflow-hidden flex flex-col reveal-up">
+                        <!-- Image Area -->
+                        <div class="relative h-64 lg:h-80 overflow-hidden cursor-none">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-orange-900/50 to-slate-900 transition-transform duration-700 group-hover:scale-105">
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <img src="assets/img/ideago.png"
+                                    alt="IDEAGO Platform - Digital Solution by Vivago Digital"
+                                    class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <!-- Content Area -->
+                        <div class="p-8 flex flex-col flex-grow bg-white dark:bg-slate-800 relative z-10">
+                            <span class="text-primary font-mono text-xs tracking-widest mb-3">02 / CORPORATE
+                                IDENTITY</span>
+                            <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">iDEAGO</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed flex-grow">
+                                A sleek, modern corporate website for an innovative agency. Built with Next.js for
+                                blazing fast performance and SEO dominance.
+                            </p>
+                            <div class="flex items-center justify-between border-t border-white/10 pt-6 mt-auto">
+                                <ul class="flex gap-2">
+                                    <li
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] text-slate-500 dark:text-slate-300 border border-white/10">
+                                        HTML</li>
+                                    <li
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] text-slate-500 dark:text-slate-300 border border-white/10">
+                                        CSS</li>
+                                    <li
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] text-slate-500 dark:text-slate-300 border border-white/10">
+                                        GSAP</li>
+                                </ul>
+                                <a href="https://ideago.xyz"
+                                    class="hover-trigger text-slate-900 dark:text-white font-bold text-sm hover:text-primary transition-colors flex items-center gap-2">
+                                    View Case Study <span class="text-lg">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Driver Welfare (Full Width) -->
+                    <div
+                        class="group relative bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-white/10 shadow-2xl overflow-hidden flex flex-col lg:flex-row lg:col-span-2 reveal-up">
+                        <!-- Image Area -->
+                        <div class="relative h-64 lg:h-auto lg:w-1/2 overflow-hidden cursor-none">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-blue-900/50 to-slate-900 transition-transform duration-700 group-hover:scale-105">
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span
+                                    class="text-5xl lg:text-7xl font-bold text-white/5 group-hover:text-white/20 transition-colors duration-500">WELFARE</span>
+                            </div>
+                        </div>
+                        <!-- Content Area -->
+                        <div
+                            class="p-8 lg:p-12 flex flex-col justify-center bg-white dark:bg-slate-800 lg:w-1/2 relative z-10">
+                            <span class="text-primary font-mono text-xs tracking-widest mb-3">03 / NON-PROFIT</span>
+                            <h3 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-4">Driver
+                                Welfare Foundation</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                                A community-focused platform for the Driver Welfare Foundation. Includes membership
+                                portals, event management, and transparent donation tracking.
+                            </p>
+                            <div class="flex items-center justify-between border-t border-white/10 pt-6">
+                                <ul class="flex gap-2">
+                                    <li
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] text-slate-500 dark:text-slate-300 border border-white/10">
+                                        HTML</li>
+                                    <li
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] text-slate-500 dark:text-slate-300 border border-white/10">
+                                        CSS</li>
+                                    <li
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] text-slate-500 dark:text-slate-300 border border-white/10">
+                                        Vanilla.js</li>
+                                </ul>
+                                <a href="https://dwfbd.com"
+                                    class="hover-trigger text-slate-900 dark:text-white font-bold text-sm hover:text-primary transition-colors flex items-center gap-2">
+                                    View Case Study <span class="text-lg">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: SLTCPSC -->
+                    <div
+                        class="group relative bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-white/10 shadow-2xl overflow-hidden flex flex-col reveal-up">
+                        <!-- Image Area -->
+                        <div class="relative h-64 lg:h-80 overflow-hidden cursor-none">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-orange-900/50 to-slate-900 transition-transform duration-700 group-hover:scale-105">
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <img src="assets/img/sltcpsc.png"
+                                    alt="SLTCPSC Website - Educational Institution Portal by Vivago Digital"
+                                    class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <!-- Content Area -->
+                        <div class="p-8 flex flex-col flex-grow bg-white dark:bg-slate-800 relative z-10">
+                            <span class="text-primary font-mono text-xs tracking-widest mb-3">04 / Cantonment
+                                College</span>
+                            <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Shaheed Leiutanent Tanzim
+                                Cantonment</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed flex-grow">
+                                A Dynamic Website for Shaheed Leiutanent Tanzim Cantonment Public School & College.
+                                Features event management, online admissions, and an interactive gallery.
+                            </p>
+                            <div class="flex items-center justify-between border-t border-white/10 pt-6 mt-auto">
+                                <ul class="flex gap-2">
+                                    <li
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] text-slate-500 dark:text-slate-300 border border-white/10">
+                                        PHP</li>
+                                    <li
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] text-slate-500 dark:text-slate-300 border border-white/10">
+                                        CSS</li>
+                                    <li
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] text-slate-500 dark:text-slate-300 border border-white/10">
+                                        JS</li>
+                                    <li
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] text-slate-500 dark:text-slate-300 border border-white/10">
+                                        MySQL</li>
+                                </ul>
+                                <a href="https://cpscramu.edu.bd"
+                                    class="hover-trigger text-slate-900 dark:text-white font-bold text-sm hover:text-primary transition-colors flex items-center gap-2">
+                                    View Case Study <span class="text-lg">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: SLTCPSC -->
+                    <div
+                        class="group relative bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-white/10 shadow-2xl overflow-hidden flex flex-col reveal-up">
+                        <!-- Image Area -->
+                        <div class="relative h-64 lg:h-80 overflow-hidden cursor-none">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-orange-900/50 to-slate-900 transition-transform duration-700 group-hover:scale-105">
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <img src="assets/img/jcd.png" alt="JCD Project - Web Application by Vivago Digital"
+                                    class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <!-- Content Area -->
+                        <div class="p-8 flex flex-col flex-grow bg-white dark:bg-slate-800 relative z-10">
+                            <span class="text-primary font-mono text-xs tracking-widest mb-3">05 / Social
+                                Organization</span>
+                            <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Jatiyotabdi ChatraDol -
+                                Blood Bank</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed flex-grow">
+                                A sleek, modern corporate website for an innovative agency. Built with Next.js for
+                                blazing fast performance and SEO dominance.
+                            </p>
+                            <div class="flex items-center justify-between border-t border-white/10 pt-6 mt-auto">
+                                <ul class="flex gap-2">
+                                    <li
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] text-slate-500 dark:text-slate-300 border border-white/10">
+                                        HTML</li>
+                                    <li
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] text-slate-500 dark:text-slate-300 border border-white/10">
+                                        CSS</li>
+                                    <li
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] text-slate-500 dark:text-slate-300 border border-white/10">
+                                        JS</li>
+                                    <li
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] text-slate-500 dark:text-slate-300 border border-white/10">
+                                        MongoDB</li>
+                                </ul>
+                                <a href="https://bloodbankjcd.org"
+                                    class="hover-trigger text-slate-900 dark:text-white font-bold text-sm hover:text-primary transition-colors flex items-center gap-2">
+                                    View Case Study <span class="text-lg">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services" class="py-32 relative bg-white dark:bg-dark">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
+                <div class="section-header reveal-up">
+                    <span class="font-mono text-primary text-sm font-bold tracking-widest uppercase mb-2 block">Our
+                        Expertise</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Digital Core Modules</h2>
+                </div>
+                <p
+                    class="text-slate-600 dark:text-slate-400 max-w-md text-sm md:text-base leading-relaxed font-medium reveal-up">
+                    We break down complex requirements into modular, scalable micro-services and robust applications.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 perspective-container min-h-[500px]">
+
+                <!-- Service Card 1 -->
+                <div
+                    class="service-card hover-trigger group relative p-10 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-card transition-all duration-300 overflow-hidden transform-gpu reveal-up">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50 dark:from-blue-900/30 to-transparent rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700">
+                    </div>
+                    <div class="relative z-10 pointer-events-none">
+                        <div
+                            class="w-14 h-14 bg-blue-50 dark:bg-blue-900/50 rounded-2xl flex items-center justify-center text-primary dark:text-primary-dark mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3
+                            class="text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-primary transition-colors">
+                            Web & App Dev</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed font-medium">Crafting
+                            pixel-perfect, responsive interfaces backed by powerful logic.</p>
+                        <ul class="space-y-3">
+                            <li
+                                class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300 font-semibold">
+                                <div class="w-1.5 h-1.5 rounded-full bg-primary"></div> Custom Applications
+                            </li>
+                            <li
+                                class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300 font-semibold">
+                                <div class="w-1.5 h-1.5 rounded-full bg-primary"></div> e-Commerce Platforms
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div
+                    class="service-card hover-trigger group relative p-10 bg-slate-900 rounded-3xl border border-slate-800 shadow-xl transition-all duration-300 overflow-hidden transform md:-translate-y-4 transform-gpu reveal-up">
+                    <div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900"></div>
+                    <div class="relative z-10 pointer-events-none">
+                        <div
+                            class="w-14 h-14 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-white mb-8 border border-white/10 group-hover:bg-primary group-hover:border-primary transition-all duration-300 shadow-lg">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Enterprise Solutions</h3>
+                        <p class="text-slate-300 mb-8 leading-relaxed font-medium">Scalable software architectures for
+                            complex business operations.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-sm text-slate-300 font-semibold">
+                                <div class="w-1.5 h-1.5 rounded-full bg-primary"></div> Custom CRM/ERP
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-slate-300 font-semibold">
+                                <div class="w-1.5 h-1.5 rounded-full bg-primary"></div> SaaS Development
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div
+                    class="service-card hover-trigger group relative p-10 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-card transition-all duration-300 overflow-hidden transform-gpu reveal-up">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-50 dark:from-cyan-900/30 to-transparent rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700">
+                    </div>
+                    <div class="relative z-10 pointer-events-none">
+                        <div
+                            class="w-14 h-14 bg-cyan-50 dark:bg-cyan-900/50 rounded-2xl flex items-center justify-center text-accent dark:text-cyan-400 mb-8 group-hover:scale-110 group-hover:bg-accent group-hover:text-white transition-all duration-300 shadow-sm">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                            </svg>
+                        </div>
+                        <h3
+                            class="text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-accent transition-colors">
+                            Technical Ops</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed font-medium">Keeping your
+                            digital presence secure, fast, and always online.</p>
+                        <ul class="space-y-3">
+                            <li
+                                class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300 font-semibold">
+                                <div class="w-1.5 h-1.5 rounded-full bg-accent"></div> Cloud Hosting
+                            </li>
+                            <li
+                                class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300 font-semibold">
+                                <div class="w-1.5 h-1.5 rounded-full bg-accent"></div> Cyber Security
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SaaS Products Section -->
+    <section id="products"
+        class="py-24 bg-white/90 dark:bg-dark/90 border-y border-slate-100 dark:border-slate-800 relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <span
+                class="font-mono text-primary text-sm font-bold tracking-widest uppercase mb-12 block text-center reveal-up">Proprietary
+                Products</span>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- MicroCampus -->
+                <div
+                    class="group relative rounded-3xl bg-slate-50 dark:bg-slate-800 p-10 hover:bg-white dark:hover:bg-slate-700 hover:shadow-2xl transition-all duration-500 border border-slate-200 dark:border-slate-700 reveal-up">
+                    <div
+                        class="absolute top-10 right-10 text-slate-200 dark:text-slate-600 group-hover:text-primary/10 transition-colors">
+                        <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">MicroCampus</h3>
+                    <div
+                        class="inline-block px-3 py-1 bg-primary/10 text-primary dark:text-primary-dark text-xs font-bold rounded-full mb-6">
+                        ED-TECH</div>
+                    <p class="text-slate-600 dark:text-slate-400 mb-8 text-lg">A comprehensive School Management
+                        Web-Application designed to streamline administrative tasks, student tracking, and academic
+                        reporting.</p>
+                    <a href="https://microcampusbd.com"
+                        class="hover-trigger magnetic-btn inline-flex items-center text-primary dark:text-white font-bold hover:gap-2 transition-all">Request
+                        Demo <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg></a>
+                </div>
+
+                <!-- LodgeOS -->
+                <div
+                    class="group relative rounded-3xl bg-slate-50 dark:bg-slate-800 p-10 hover:bg-white dark:hover:bg-slate-700 hover:shadow-2xl transition-all duration-500 border border-slate-200 dark:border-slate-700 reveal-up">
+                    <div
+                        class="absolute top-10 right-10 text-slate-200 dark:text-slate-600 group-hover:text-accent/10 transition-colors">
+                        <img src="assets/img/lodgeos.png" alt="LodgeOS - Hotel Management Software by Vivago Digital"
+                            class="w-32 h-32" />
+                    </div>
+                    <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">LodgeOS</h3>
+                    <div
+                        class="inline-block px-3 py-1 bg-accent/10 text-accent dark:text-cyan-400 text-xs font-bold rounded-full mb-6">
+                        HOSPITALITY</div>
+                    <p class="text-slate-600 dark:text-slate-400 mb-8 text-lg">An all-in-one Hotel Management
+                        Web-Application. Manage bookings, housekeeping, billing, and guest relations from a single
+                        dashboard.</p>
+                    <a href="https://lodgeos.app"
+                        class="hover-trigger magnetic-btn inline-flex items-center text-accent dark:text-white font-bold hover:gap-2 transition-all">Request
+                        Demo <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-slate-50/90 dark:bg-slate-900/50 relative">
+        <div class="container mx-auto px-6 max-w-4xl relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-12 text-center reveal-up">
+                Frequently Asked Questions</h2>
+
+            <div class="space-y-4">
+                <div class="hover-trigger faq-item bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden cursor-pointer reveal-up"
+                    onclick="this.classList.toggle('active')">
+                    <div class="p-6 flex justify-between items-center">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white">How long does a typical project
+                            take?</h4>
+                        <svg class="faq-icon w-6 h-6 text-slate-400" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                    <div class="faq-content bg-slate-50 dark:bg-slate-900 px-6">
+                        <p class="text-slate-600 dark:text-slate-400 pb-6">Timeline depends on complexity. A standard
+                            corporate website usually takes 2-4 weeks, while custom SaaS applications can take 3-6
+                            months. We provide detailed timelines during our discovery phase.</p>
+                    </div>
+                </div>
+
+                <div class="hover-trigger faq-item bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden cursor-pointer reveal-up"
+                    onclick="this.classList.toggle('active')">
+                    <div class="p-6 flex justify-between items-center">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white">Do you offer post-launch support?
+                        </h4>
+                        <svg class="faq-icon w-6 h-6 text-slate-400" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                    <div class="faq-content bg-slate-50 dark:bg-slate-900 px-6">
+                        <p class="text-slate-600 dark:text-slate-400 pb-6">Absolutely. We offer various retainer
+                            packages for maintenance, security updates, and feature additions to ensure your digital
+                            product evolves with your business.</p>
+                    </div>
+                </div>
+
+                <div class="hover-trigger faq-item bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden cursor-pointer reveal-up"
+                    onclick="this.classList.toggle('active')">
+                    <div class="p-6 flex justify-between items-center">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white">What tech stack do you use?</h4>
+                        <svg class="faq-icon w-6 h-6 text-slate-400" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                    <div class="faq-content bg-slate-50 dark:bg-slate-900 px-6">
+                        <p class="text-slate-600 dark:text-slate-400 pb-6">We specialize in modern stacks: React,
+                            Next.js, and Node.js for web apps; Flutter for mobile; and robust cloud infrastructure via
+                            AWS and DigitalOcean.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Ticker -->
+    <div class="bg-slate-900 py-16 text-white border-y border-slate-800 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiMzMzMiLz48L3N2Zz4=')] opacity-20">
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+                <!-- Removed 'reveal-up' to avoid conflict, GSAP handles opacity -->
+                <div class="stat-item">
+                    <div
+                        class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400 mb-2">
+                        <span class="counter" data-target="15">0</span>+
+                    </div>
+                    <div class="text-xs font-mono tracking-widest text-primary uppercase">Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div
+                        class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400 mb-2">
+                        <span class="counter" data-target="98">0</span>%
+                    </div>
+                    <div class="text-xs font-mono tracking-widest text-primary uppercase">Retention</div>
+                </div>
+                <div class="stat-item">
+                    <div
+                        class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400 mb-2">
+                        24/7</div>
+                    <div class="text-xs font-mono tracking-widest text-primary uppercase">Support</div>
+                </div>
+                <div class="stat-item">
+                    <div
+                        class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400 mb-2">
+                        Global</div>
+                    <div class="text-xs font-mono tracking-widest text-primary uppercase">Reach</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="py-32 relative">
+        <div class="container mx-auto px-6">
+            <div
+                class="glass-panel rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden border border-white/50 dark:border-white/10 reveal-up">
+                <div
+                    class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2">
+                </div>
+
+                <div class="relative z-10 max-w-3xl mx-auto">
+                    <h2
+                        class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-slate-400 mb-8 tracking-tight">
+                        Ready to shape the future?</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg md:text-xl mb-12">
+                        Let's collaborate to build a digital solution that sets your brand apart.
+                    </p>
+
+                    <div class="flex flex-col md:flex-row justify-center gap-6">
+                        <a href="mailto:hello@vivagodigital.com"
+                            class="hover-trigger magnetic-btn px-10 py-5 bg-white text-slate-900 rounded-full font-bold hover:bg-slate-100 transition-all hover:scale-105 shadow-lg">
+                            hello@vivagodigital.com
+                        </a>
+                        <a href="tel:+8801618129800"
+                            class="hover-trigger px-10 py-5 bg-transparent border border-slate-600 rounded-full font-bold hover:bg-slate-400 hover:border-slate-500 transition-all text-slate-900 dark:text-slate-400">
+                            Schedule a Call
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        class="bg-white/90 dark:bg-dark/90 pt-12 md:pt-24 pb-6 md:pb-12 border-t border-slate-100 dark:border-slate-800 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8 md:mb-16">
+                <div class="col-span-1 reveal-up">
+                    <a href="index.html" class="flex items-center gap-2 group mb-4">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-glow">
+                            <img src="assets/img/logo.png" alt="Vivago Logo" class="w-10 h-10 md:w-12 md:h-12">
+                        </div>
+                        <span class="font-bold text-lg md:text-xl tracking-tight text-slate-800 dark:text-white">VIVAGO
+                            DIGITAL</span>
+                    </a>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                        Engineering digital excellence through innovation, precision, and partnership.
+                    </p>
+                    <div class="flex gap-3">
+                        <!-- Social Placeholders -->
+                        <div
+                            class="hover-trigger magnetic-btn w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all cursor-pointer">
+                            <a href="https://www.linkedin.com/company/111561978/"><svg class="w-4 h-4"
+                                    fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 4.56v14.9c0 2.5-2.06 4.54-4.57 4.54H4.57C2.07 24 0 21.96 0 19.46V4.56C0 2.06 2.06 0 4.57 0h14.86C21.94 0 24 2.06 24 4.56zM7.34 20.6h3.42v-10h-3.42v10zM9.06 9.17c-1.1 0-1.99-.9-1.99-1.99 0-1.09.89-1.99 1.99-1.99 1.1 0 2 .9 2 1.99 0 1.1-.9 1.99-2 1.99zm11.53 11.43v-5.64c0-2.78-1.48-4.08-3.46-4.08-1.6 0-2.31.88-2.71 1.5v-1.28h-3.41c.04.99 0 10.03 0 10.03h3.41v-5.6c0-.3.02-.6.11-.82.24-.6.79-1.22 1.71-1.22.85 0 1.19.64 1.19 1.58v5.53h3.41z" />
+                                </svg></a>
+                        </div>
+                        <div
+                            class="hover-trigger magnetic-btn w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all cursor-pointer">
+                            <a href="https://facebook.com/vivagodigital/"><svg class="w-4 h-4" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07" />
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-up hidden md:block">
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6">Company</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="#about" class="hover-trigger hover:text-primary transition-colors">About Us</a>
+                        </li>
+                        <li><a href="#projects" class="hover-trigger hover:text-primary transition-colors">Case
+                                Studies</a></li>
+                        <li><a href="#careers" class="hover-trigger hover:text-primary transition-colors">Careers</a>
+                        </li>
+                        <li><a href="#contact" class="hover-trigger hover:text-primary transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="reveal-up hidden md:block">
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6">Services</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Web Development</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Mobile Apps</a></li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">SaaS Solutions</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">DevOps & Cloud</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="reveal-up hidden md:block">
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6">Legal</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Privacy Policy</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Terms of Service</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Cookie Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-100 dark:border-slate-800 pt-6 text-center text-sm text-slate-500">
+                &copy; <span id="copyright-year"></span> Vivago Digital. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

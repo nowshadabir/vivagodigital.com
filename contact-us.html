@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo.png">
+    <link rel="apple-touch-icon" href="assets/img/logo.png">
+
+    <!-- SEO & Metadata -->
+    <title>Contact Us - Start Your Digital Project | Vivago Digital</title>
+    <meta name="description"
+        content="Ready to transform your business? Contact Vivago Digital for web development, app development, SEO, and digital solutions. Located in Cox's Bazar, Bangladesh.">
+    <meta name="keywords"
+        content="Contact Vivago Digital, Web Development Bangladesh, Digital Agency Contact, Cox's Bazar Web Developers">
+    <meta name="author" content="Vivago Digital">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vivagodigital.com/contact-us.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vivagodigital.com/contact-us.html">
+    <meta property="og:title" content="Contact Us | Vivago Digital">
+    <meta property="og:description" content="Get in touch with Vivago Digital for your next digital project.">
+    <meta property="og:image" content="https://vivagodigital.com/assets/img/logo-700x380.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="Contact Us | Vivago Digital">
+    <meta property="twitter:description" content="Get in touch with Vivago Digital for your next digital project.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Existing Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Existing Script (Loads Theme, Cursor, Liquid BG) -->
+    <script src="assets/js/script.js" defer></script>
+
+    <!-- Configure Tailwind for Dark Mode to match existing config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2563eb',
+                        'primary-dark': '#3b82f6',
+                        'accent': '#06b6d4',
+                        'dark': '#020617',
+                        'light': '#f8fafc',
+                        'surface': '#ffffff'
+                    },
+                    fontFamily: {
+                        'sans': ['Outfit', 'sans-serif'],
+                        'mono': ['Space Grotesk', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(37, 99, 235, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Page Specific Styles */
+        .input-group {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .input-field {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid #cbd5e1;
+            /* slate-300 */
+            padding: 10px 0;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .dark .input-field {
+            border-bottom-color: #334155;
+            /* slate-700 */
+            color: white;
+        }
+
+        .input-field:focus {
+            border-bottom-color: #2563eb;
+            /* primary */
+        }
+
+        .dark .input-field:focus {
+            border-bottom-color: #3b82f6;
+            /* primary-dark */
+        }
+
+        .input-label {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            pointer-events: none;
+            color: #64748b;
+            /* slate-500 */
+            transition: 0.3s ease all;
+        }
+
+        .input-field:focus~.input-label,
+        .input-field:valid~.input-label {
+            top: -20px;
+            font-size: 0.8rem;
+            color: #2563eb;
+        }
+
+        .dark .input-field:focus~.input-label,
+        .dark .input-field:valid~.input-label {
+            color: #3b82f6;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-900 dark:bg-dark dark:text-slate-100 antialiased selection:bg-primary/20 selection:text-primary-dark">
+
+    <!-- Custom Cursor Elements (Required for script.js) -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-jelly"></div>
+
+    <!-- Loading Screen (Required for script.js) -->
+    <div class="loader-overlay" id="loader">
+        <div class="flex flex-col items-center gap-4">
+            <div
+                class="w-12 h-12 border-4 border-slate-200 border-t-primary rounded-full animate-spin dark:border-slate-800 dark:border-t-primary-dark">
+            </div>
+            <div class="font-mono text-xs tracking-widest text-slate-400">INITIALIZING LINK</div>
+        </div>
+    </div>
+
+    <!-- Liquid Background Canvas (Required for script.js) -->
+    <canvas id="liquidCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex justify-between items-center shadow-sm">
+            <a href="index.html" class="flex items-center gap-2 group hover-trigger">
+                <div class="w-32 h-8 rounded-lg flex items-center justify-center text-white font-bold text-lg"><img
+                        id="nav-logo" src="assets/img/black-text-logo.png" alt="Vivago Digital Logo"></div>
+                <!-- <span class="font-bold text-xl tracking-tight text-slate-800 dark:text-white">VIVAGO DIGITAL</span> -->
+            </a>
+
+            <div class="hidden md:flex items-center gap-1 font-medium text-sm text-slate-600 dark:text-slate-300">
+                <a href="index.html#about"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">About</a>
+                <a href="index.html#services"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Services</a>
+                <a href="index.html#projects"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Projects</a>
+                <a href="index.html#products"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Products</a>
+                <a href="team.html"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Team</a>
+                <a href="blogs.html"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Blogs</a>
+                <div class="w-px h-4 bg-slate-200 dark:bg-slate-700 mx-2"></div>
+
+                <!-- Dark Mode Toggle -->
+                <button id="themeToggle"
+                    class="hover-trigger magnetic-btn p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-all mr-2">
+                    <!-- Sun Icon (Visible in Dark Mode) -->
+                    <svg id="sunIcon" class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                        </path>
+                    </svg>
+                    <!-- Moon Icon (Hidden in Dark Mode) -->
+                    <svg id="moonIcon" class="w-5 h-5 text-slate-600 dark:text-slate-300 hidden" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                        </path>
+                    </svg>
+                </button>
+
+                <a href="contact-us.html"><button onclick="document.getElementById('contact').scrollIntoView()"
+                        class="hover-trigger magnetic-btn px-6 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full hover:bg-primary dark:hover:bg-primary-dark hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300 font-medium nav-desktop-item">
+                        Start Project
+                    </button></a>
+            </div>
+
+            <button class="md:hidden text-slate-800 dark:text-white" onclick="toggleMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+        class="fixed inset-0 z-40 bg-white/95 dark:bg-dark/95 backdrop-blur-xl -translate-y-full transition-transform duration-500 flex items-start justify-center pt-24">
+        <button class="absolute top-8 right-8 text-slate-800 dark:text-white" onclick="toggleMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="flex flex-col gap-8 text-center text-3xl font-bold text-slate-800 dark:text-white">
+            <a href="index.html#about" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">About</a>
+            <a href="index.html#services" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">Services</a>
+            <a href="index.html#projects" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">Projects</a>
+            <a href="index.html#products" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">Products</a>
+            <a href="team.html" onclick="toggleMenu()" class="hover:text-primary transition-colors menu-item">Team</a>
+            <a href="blogs.html" onclick="toggleMenu()" class="hover:text-primary transition-colors menu-item">Blogs</a>
+            <a href="contact-us.html" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">Contact</a>
+            <button onclick="toggleTheme(); toggleMenu()"
+                class="text-lg font-medium text-slate-500 dark:text-slate-400 menu-item">Switch Theme</button>
+        </div>
+    </div>
+
+    <!-- Contact Content -->
+    <main class="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6">
+        <div class="container mx-auto">
+            <div class="grid lg:grid-cols-12 gap-16 items-start">
+
+                <!-- Left Column: Info -->
+                <div class="lg:col-span-5 space-y-10 reveal-up">
+                    <div>
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary dark:text-primary-dark text-xs font-bold tracking-widest uppercase mb-6">
+                            Contact Us
+                        </div>
+                        <h1 class="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
+                            Let's Start a <br> <span class="text-shimmer">Conversation.</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 dark:text-slate-400">
+                            Whether you have a game-changing idea or just want to discuss the future of tech, we're all
+                            ears.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm text-primary dark:text-primary-dark shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white text-lg">Email Us</h4>
+                                <a href="mailto:hello@vivagodigital.com"
+                                    class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors">hello@vivagodigital.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm text-primary dark:text-primary-dark shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white text-lg">Call Us</h4>
+                                <a href="tel:+8801618129800"
+                                    class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors">+880
+                                    1618 129800</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm text-primary dark:text-primary-dark shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white text-lg">Visit HQ</h4>
+                                <p class="text-slate-500 dark:text-slate-400">Cox's Bazar, Bangladesh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form -->
+                <div class="lg:col-span-7 relative reveal-up" style="transition-delay: 0.1s;">
+                    <!-- Decorative Background Blob behind form -->
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-2xl -z-10">
+                    </div>
+
+                    <div
+                        class="glass-panel p-8 md:p-12 rounded-3xl border border-white/50 dark:border-white/5 relative overflow-hidden">
+                        <form id="contactForm" class="space-y-8 relative z-10">
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="input-group">
+                                    <input type="text" id="name" class="input-field" required>
+                                    <label for="name" class="input-label">Your Name</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="email" id="email" class="input-field" required>
+                                    <label for="email" class="input-label">Email Address</label>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <input type="text" id="subject" class="input-field" required>
+                                <label for="subject" class="input-label">Subject</label>
+                            </div>
+
+                            <div class="input-group">
+                                <textarea id="message" rows="4" class="input-field resize-none" required></textarea>
+                                <label for="message" class="input-label">Tell us about your project</label>
+                            </div>
+
+                            <div class="pt-4">
+                                <button type="submit"
+                                    class="hover-trigger magnetic-btn w-full md:w-auto px-10 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-bold hover:bg-primary dark:hover:bg-primary-dark dark:hover:text-white transition-all shadow-lg flex items-center justify-center gap-2 group">
+                                    Send Message
+                                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="bg-white/90 dark:bg-dark/90 pt-12 md:pt-24 pb-6 md:pb-12 border-t border-slate-100 dark:border-slate-800 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8 md:mb-16">
+                <div class="col-span-1 reveal-up">
+                    <a href="index.html" class="flex items-center gap-2 group mb-4">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-glow">
+                            <img src="assets/img/logo.png" alt="Vivago Logo" class="w-10 h-10 md:w-12 md:h-12">
+                        </div>
+                        <span class="font-bold text-lg md:text-xl tracking-tight text-slate-800 dark:text-white">VIVAGO
+                            DIGITAL</span>
+                    </a>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                        Engineering digital excellence through innovation, precision, and partnership.
+                    </p>
+                    <div class="flex gap-3">
+                        <!-- Social Placeholders -->
+                        <div
+                            class="hover-trigger magnetic-btn w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all cursor-pointer">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.56v14.9c0 2.5-2.06 4.54-4.57 4.54H4.57C2.07 24 0 21.96 0 19.46V4.56C0 2.06 2.06 0 4.57 0h14.86C21.94 0 24 2.06 24 4.56zM7.34 20.6h3.42v-10h-3.42v10zM9.06 9.17c-1.1 0-1.99-.9-1.99-1.99 0-1.09.89-1.99 1.99-1.99 1.1 0 2 .9 2 1.99 0 1.1-.9 1.99-2 1.99zm11.53 11.43v-5.64c0-2.78-1.48-4.08-3.46-4.08-1.6 0-2.31.88-2.71 1.5v-1.28h-3.41c.04.99 0 10.03 0 10.03h3.41v-5.6c0-.3.02-.6.11-.82.24-.6.79-1.22 1.71-1.22.85 0 1.19.64 1.19 1.58v5.53h3.41z" />
+                            </svg>
+                        </div>
+                        <div
+                            class="hover-trigger magnetic-btn w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all cursor-pointer">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-up hidden md:block">
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6">Company</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="#about" class="hover-trigger hover:text-primary transition-colors">About Us</a>
+                        </li>
+                        <li><a href="#projects" class="hover-trigger hover:text-primary transition-colors">Case
+                                Studies</a></li>
+                        <li><a href="#careers" class="hover-trigger hover:text-primary transition-colors">Careers</a>
+                        </li>
+                        <li><a href="#contact" class="hover-trigger hover:text-primary transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="reveal-up hidden md:block">
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6">Services</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Web Development</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Mobile Apps</a></li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">SaaS Solutions</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">DevOps & Cloud</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="reveal-up hidden md:block">
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6">Legal</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Privacy Policy</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Terms of Service</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Cookie Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-100 dark:border-slate-800 pt-6 text-center text-sm text-slate-500">
+                &copy; <span id="copyright-year"></span> Vivago Digital. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inline Script for Page Specific Behavior & Animations -->
+    <script>
+        // Update Copyright
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+        // Animate elements on load
+        window.addEventListener('load', () => {
+            gsap.utils.toArray('.reveal-up').forEach((elem, i) => {
+                gsap.to(elem, {
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: "top 90%",
+                        once: true
+                    },
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    delay: i * 0.1, // Stagger effect
+                    ease: "power2.out"
+                });
+            });
+        });
+
+        // Simple Form Handler
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerHTML;
+
+            btn.innerHTML = 'Sending...';
+            btn.classList.add('opacity-75', 'cursor-wait');
+
+            // Simulate sending
+            setTimeout(() => {
+                btn.innerHTML = 'Message Sent! ✓';
+                btn.classList.remove('opacity-75', 'cursor-wait');
+                btn.classList.add('bg-green-600', 'border-green-600', 'text-white');
+                e.target.reset();
+
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('bg-green-600', 'border-green-600', 'text-white');
+                }, 3000);
+            }, 1500);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo.png">
+    <link rel="apple-touch-icon" href="assets/img/logo.png">
+
+    <!-- SEO & Metadata -->
+    <title>MicroCampus - School Management System SaaS Platform | Vivago Digital</title>
+    <meta name="description"
+        content="MicroCampus is a comprehensive school management system for Bangladesh institutions. Streamline admissions, attendance, exams, fees, and parent engagement. Cloud-based SaaS solution by Vivago Digital.">
+    <meta name="keywords"
+        content="MicroCampus Bangladesh, school management system, school ERP Bangladesh, attendance system, online fees payment, education software, school admin software, student information system, Vivago Digital">
+    <meta name="author" content="Vivago Digital">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vivagodigital.com/microcampus-blog.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vivagodigital.com/microcampus-blog.html">
+    <meta property="og:title" content="MicroCampus - School Management System | Vivago Digital">
+    <meta property="og:description"
+        content="Complete school management solution for admissions, attendance, exams, and more.">
+    <meta property="og:image" content="https://vivagodigital.com/assets/img/logo-700x380.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="MicroCampus - School Management System">
+    <meta property="twitter:description" content="Complete school management solution by Vivago Digital.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Existing Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Existing Script -->
+    <script src="assets/js/script.js" defer></script>
+
+    <!-- Configure Tailwind -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2563eb',
+                        'primary-dark': '#3b82f6',
+                        'accent': '#06b6d4',
+                        'dark': '#020617',
+                        'light': '#f8fafc',
+                        'surface': '#ffffff'
+                    },
+                    fontFamily: {
+                        'sans': ['Outfit', 'sans-serif'],
+                        'mono': ['Space Grotesk', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(37, 99, 235, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Progress Bar */
+        #progress-bar {
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #06b6d4);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            transition: width 0.1s ease;
+        }
+
+        /* Typography Override for Article Content */
+        .article-content h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+            font-weight: 700;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+            /* slate-900 */
+        }
+
+        .dark .article-content h2 {
+            color: #f8fafc;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.125rem;
+            color: #475569;
+            /* slate-600 */
+        }
+
+        .dark .article-content p {
+            color: #94a3b8;
+            /* slate-400 */
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #2563eb;
+            padding-left: 1.5rem;
+            font-style: italic;
+            font-size: 1.25rem;
+            margin: 2rem 0;
+            color: #334155;
+        }
+
+        .dark .article-content blockquote {
+            color: #cbd5e1;
+        }
+
+        .article-content ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #475569;
+        }
+
+        .dark .article-content ul {
+            color: #94a3b8;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-900 dark:bg-dark dark:text-slate-100 antialiased selection:bg-primary/20 selection:text-primary-dark">
+
+    <!-- Reading Progress Bar -->
+    <div id="progress-bar"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-jelly"></div>
+
+    <!-- Loading Screen -->
+    <div class="loader-overlay" id="loader">
+        <div class="flex flex-col items-center gap-4">
+            <div
+                class="w-12 h-12 border-4 border-slate-200 border-t-primary rounded-full animate-spin dark:border-slate-800 dark:border-t-primary-dark">
+            </div>
+            <div class="font-mono text-xs tracking-widest text-slate-400">LOADING ARTICLE</div>
+        </div>
+    </div>
+
+    <!-- Liquid Background -->
+    <canvas id="liquidCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex justify-between items-center shadow-sm">
+            <a href="index.html" class="flex items-center gap-2 group hover-trigger">
+                <div
+                    class="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-glow group-hover:scale-110 transition-transform duration-300">
+                    <img src="assets/img/logo.png" alt="Vivago Digital Logo">
+                </div>
+                <span class="font-bold text-xl tracking-tight text-slate-800 dark:text-white">VIVAGO DIGITAL</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-1 font-medium text-sm text-slate-600 dark:text-slate-300">
+                <a href="index.html#about"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">About</a>
+                <a href="index.html#services"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Services</a>
+                <a href="index.html#projects"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Projects</a>
+                <a href="index.html#products"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Products</a>
+                <a href="team.html"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Team</a>
+                <a href="blogs.html"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Blogs</a>
+                <div class="w-px h-4 bg-slate-200 dark:bg-slate-700 mx-2"></div>
+
+                <!-- Dark Mode Toggle -->
+                <button id="themeToggle"
+                    class="hover-trigger magnetic-btn p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-all mr-2">
+                    <!-- Sun Icon (Visible in Dark Mode) -->
+                    <svg id="sunIcon" class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                        </path>
+                    </svg>
+                    <!-- Moon Icon (Hidden in Dark Mode) -->
+                    <svg id="moonIcon" class="w-5 h-5 text-slate-600 dark:text-slate-300 hidden" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                        </path>
+                    </svg>
+                </button>
+
+                <a href="contact-us.html"><button onclick="document.getElementById('contact').scrollIntoView()"
+                        class="hover-trigger magnetic-btn px-6 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full hover:bg-primary dark:hover:bg-primary-dark hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300 font-medium nav-desktop-item">
+                        Start Project
+                    </button></a>
+            </div>
+
+            <button class="md:hidden text-slate-800 dark:text-white" onclick="toggleMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+        class="fixed inset-0 z-40 bg-white/95 dark:bg-dark/95 backdrop-blur-xl -translate-y-full transition-transform duration-500 flex items-start justify-center pt-24">
+        <button class="absolute top-8 right-8 text-slate-800 dark:text-white" onclick="toggleMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="flex flex-col gap-8 text-center text-3xl font-bold text-slate-800 dark:text-white">
+            <a href="index.html#about" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">About</a>
+            <a href="index.html#services" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">Services</a>
+            <a href="index.html#projects" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">Projects</a>
+            <a href="index.html#products" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">Products</a>
+            <a href="team.html" onclick="toggleMenu()" class="hover:text-primary transition-colors menu-item">Team</a>
+            <a href="blogs.html" onclick="toggleMenu()" class="hover:text-primary transition-colors menu-item">Blogs</a>
+            <a href="contact-us.html" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">Contact</a>
+            <button onclick="toggleTheme(); toggleMenu()"
+                class="text-lg font-medium text-slate-500 dark:text-slate-400 menu-item">Switch Theme</button>
+        </div>
+    </div>
+
+    <!-- Article Content -->
+    <article class="pt-40 pb-20 relative">
+        <div class="container mx-auto px-6">
+
+            <!-- Header -->
+            <div class="max-w-4xl mx-auto text-center mb-16 reveal-up">
+                <div
+                    class="flex items-center justify-center gap-4 mb-6 text-sm font-mono text-slate-500 dark:text-slate-400">
+                    <span
+                        class="category-badge px-3 py-1 bg-primary/10 text-primary dark:text-primary-dark font-bold rounded-full">TECHNOLOGY</span>
+                    <span>March 15, 2024</span>
+                    <span>5 min read</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white leading-tight mb-8">
+                    The Future of SaaS: Why Micro-Services are Winning
+                </h1>
+                <div class="flex items-center justify-center gap-4">
+                    <div
+                        class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-lg overflow-hidden">
+                        <img src="assets/img/kazi-nowshad-abir.jpg" alt="Kazi Nowshad Abir"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="text-left">
+                        <p class="text-sm font-bold text-slate-900 dark:text-white">Kazi Nowshad Abir</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Managing Director</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Image -->
+            <div class="max-w-5xl mx-auto mb-20 reveal-up">
+                <div
+                    class="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/20 dark:border-white/5 group">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1600"
+                        alt="Code Abstract"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <!-- Glass Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent"></div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12 max-w-6xl mx-auto">
+
+                <!-- Share Sidebar (Sticky) -->
+                <div class="lg:col-span-2 hidden lg:block">
+                    <div class="sticky top-32 flex flex-col gap-4 items-center reveal-up">
+                        <span
+                            class="text-xs font-mono text-slate-400 uppercase tracking-widest vertical-text writing-mode-vertical-rl rotate-180 mb-4">Share
+                            This</span>
+                        <button
+                            class="hover-trigger magnetic-btn w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary transition-all shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.56v14.9c0 2.5-2.06 4.54-4.57 4.54H4.57C2.07 24 0 21.96 0 19.46V4.56C0 2.06 2.06 0 4.57 0h14.86C21.94 0 24 2.06 24 4.56z" />
+                            </svg>
+                        </button>
+                        <button
+                            class="hover-trigger magnetic-btn w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary transition-all shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                        </button>
+                        <button
+                            class="hover-trigger magnetic-btn w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary transition-all shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Main Content (MicroCampus article implanted) -->
+                <div class="lg:col-span-8 article-content reveal-up">
+                    <header class="max-w-4xl mx-auto text-center mb-16">
+                        <p class="text-sm font-mono text-primary uppercase tracking-wide mb-2">Product • Education •
+                            School Management</p>
+                        <h1 class="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white leading-tight mb-4">
+                            MicroCampus: The Comprehensive, Modular School Management Platform</h1>
+                        <p class="text-lg text-slate-800 dark:text-slate-300">MicroCampus empowers schools to manage
+                            admissions, academics, finance, HR and communications from a single, modern platform —
+                            designed for reliability, scalability and fast time-to-value.</p>
+                    </header>
+
+                    <article class="prose lg:prose-lg dark:prose-invert">
+                        <section>
+                            <h2>Why Schools Choose MicroCampus</h2>
+                            <p>Traditional monolithic school systems create operational bottlenecks, slow updates, and
+                                risky deployments. MicroCampus is built with a modular mindset — each capability is
+                                delivered as a clear domain module (SIS, Finance, Attendance, LMS integrations), which
+                                means faster releases, isolated faults, and the flexibility to adopt the right
+                                technology for each service.</p>
+                        </section>
+
+                        <section>
+                            <h2>Core Capabilities</h2>
+                            <ul>
+                                <li><strong>Central Administration:</strong> Unified dashboards and role-based access
+                                    make it simple for admins to control the entire school ecosystem.</li>
+                                <li><strong>Student Information System (SIS):</strong> Full lifecycle student records,
+                                    admission workflows, TC generation and printable reports.</li>
+                                <li><strong>Attendance & Notifications:</strong> Daily attendance with automated
+                                    absentee alerts to parents via SMS or email, and optional hardware integrations
+                                    (RFID/biometrics).</li>
+                                <li><strong>Examination & Results:</strong> Exam creation, admit card generation, bulk
+                                    marks upload, automated grade calculation and publishing.</li>
+                                <li><strong>Finance & Fee Management:</strong> Flexible fee structures, bulk invoicing,
+                                    online payments (local gateways), receipts and robust reporting.</li>
+                                <li><strong>Teacher & Parent Portals:</strong> Dedicated interfaces for teachers and
+                                    parents to view timetables, grades, notices and payments.</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h2>Key Benefits</h2>
+                            <p>MicroCampus delivers measurable benefits across operational, technical and business
+                                dimensions:</p>
+                            <ul>
+                                <li><strong>Fault Isolation:</strong> One module can fail without bringing down the
+                                    whole platform, improving uptime.</li>
+                                <li><strong>Tech Flexibility:</strong> Use the best tool for each job — Go/Rust
+                                    microservices for heavy data crunching, React/Node.js for UI-driven modules.</li>
+                                <li><strong>Faster Time-to-Market:</strong> Small teams ship features independently,
+                                    reducing release cycles and accelerating improvements.</li>
+                                <li><strong>Data Integrity & Reporting:</strong> Centralized data exports and analytics
+                                    for attendance, finance and academic performance.</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h2>Implementation & DevOps</h2>
+                            <p>Adopting MicroCampus comes with a recommended DevOps baseline: containerized services
+                                (Docker), orchestration (Kubernetes), CI/CD pipelines, and observability (metrics,
+                                tracing and centralized logging). These practices make the modular architecture operable
+                                and resilient at scale.</p>
+                        </section>
+
+                        <section>
+                            <h2>Practical Use Cases</h2>
+                            <p>MicroCampus is ideal for:</p>
+                            <ul>
+                                <li>Medium-to-large private schools and multi-branch groups seeking centralized
+                                    administration.</li>
+                                <li>Institutions needing local payment gateway integrations and compliance with regional
+                                    financial processes.</li>
+                                <li>Education networks that want to run different modules on mixed technology stacks
+                                    while keeping a single source of truth.</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h2>When Not to Start with Micro-Services</h2>
+                            <p>Microservices deliver long-term benefits but add operational complexity. For early-stage
+                                MVPs or small schools with minimal needs, a simpler monolith or SaaS solution may be
+                                quicker. However, MicroCampus encourages early domain separation so you can extract
+                                services later with minimal rewrite.</p>
+                        </section>
+
+                        <section>
+                            <h2>Key Takeaway</h2>
+                            <p>MicroCampus offers a pragmatic path to modern school management: plan for modularity,
+                                avoid premature optimization, and adopt DevOps practices to unlock reliability and
+                                speed. For enterprise schools, the investment in a modular architecture pays off in
+                                agility, observability and maintenance savings.</p>
+                        </section>
+
+                        <section>
+                            <h2>Frequently Asked Questions</h2>
+                            <h3>Can we integrate MicroCampus with our existing student database?</h3>
+                            <p>Yes. MicroCampus provides import tools and API adapters to migrate or synchronize
+                                existing records while preserving data integrity.</p>
+
+                            <h3>Which payment gateways are supported?</h3>
+                            <p>MicroCampus supports common international and regional gateways. We implement
+                                integrations for local gateways (bKash, Nagad, SSLCommerz, etc.) as part of the
+                                deployment package.</p>
+
+                            <h3>Is training provided?</h3>
+                            <p>Yes. Vivago Digital offers onboarding, admin training, and optional managed services to
+                                operate the platform.</p>
+                        </section>
+
+                        <section class="mt-8">
+                            <h2>Get Started</h2>
+                            <p>If you'd like to explore MicroCampus for your institution, <a
+                                    href="mailto:hello@vivagodigital.com">contact our team</a> for a demo, pricing and
+                                implementation plan. We help you assess requirements and build a roadmap that minimizes
+                                disruption and accelerates value.</p>
+                        </section>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </article>
+
+    <!-- Read Next Section -->
+    <section class="py-20 bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-10 text-center reveal-up">Read Next</h3>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Related 1 -->
+                <a href="#"
+                    class="group hover-trigger glass-panel p-6 rounded-2xl flex items-center gap-6 transition-all hover:bg-white dark:hover:bg-slate-800 reveal-up">
+                    <div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
+                        <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=80&w=200"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-accent uppercase tracking-wider mb-1 block">Design</span>
+                        <h4
+                            class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                            Glassmorphism in 2024</h4>
+                    </div>
+                </a>
+
+                <!-- Related 2 -->
+                <a href="#"
+                    class="group hover-trigger glass-panel p-6 rounded-2xl flex items-center gap-6 transition-all hover:bg-white dark:hover:bg-slate-800 reveal-up">
+                    <div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
+                        <img src="https://images.unsplash.com/photo-1553877615-30c730d4b635?auto=format&fit=crop&q=80&w=200"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                    </div>
+                    <div>
+                        <span
+                            class="text-xs font-bold text-purple-500 uppercase tracking-wider mb-1 block">Business</span>
+                        <h4
+                            class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                            Scaling Your Startup</h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        class="bg-white/90 dark:bg-dark/90 pt-12 md:pt-24 pb-6 md:pb-12 border-t border-slate-100 dark:border-slate-800 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8 md:mb-16">
+                <div class="col-span-1 reveal-up">
+                    <a href="index.html" class="flex items-center gap-2 group mb-4">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-glow">
+                            <img src="assets/img/logo.png" alt="Vivago Logo" class="w-10 h-10 md:w-12 md:h-12">
+                        </div>
+                        <span class="font-bold text-lg md:text-xl tracking-tight text-slate-800 dark:text-white">VIVAGO
+                            DIGITAL</span>
+                    </a>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                        Engineering digital excellence through innovation, precision, and partnership.
+                    </p>
+                    <div class="flex gap-3">
+                        <!-- Social Placeholders -->
+                        <div
+                            class="hover-trigger magnetic-btn w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all cursor-pointer">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.56v14.9c0 2.5-2.06 4.54-4.57 4.54H4.57C2.07 24 0 21.96 0 19.46V4.56C0 2.06 2.06 0 4.57 0h14.86C21.94 0 24 2.06 24 4.56zM7.34 20.6h3.42v-10h-3.42v10zM9.06 9.17c-1.1 0-1.99-.9-1.99-1.99 0-1.09.89-1.99 1.99-1.99 1.1 0 2 .9 2 1.99 0 1.1-.9 1.99-2 1.99zm11.53 11.43v-5.64c0-2.78-1.48-4.08-3.46-4.08-1.6 0-2.31.88-2.71 1.5v-1.28h-3.41c.04.99 0 10.03 0 10.03h3.41v-5.6c0-.3.02-.6.11-.82.24-.6.79-1.22 1.71-1.22.85 0 1.19.64 1.19 1.58v5.53h3.41z" />
+                            </svg>
+                        </div>
+                        <div
+                            class="hover-trigger magnetic-btn w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all cursor-pointer">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-up hidden md:block">
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6">Company</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="#about" class="hover-trigger hover:text-primary transition-colors">About Us</a>
+                        </li>
+                        <li><a href="#projects" class="hover-trigger hover:text-primary transition-colors">Case
+                                Studies</a></li>
+                        <li><a href="#careers" class="hover-trigger hover:text-primary transition-colors">Careers</a>
+                        </li>
+                        <li><a href="#contact" class="hover-trigger hover:text-primary transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="reveal-up hidden md:block">
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6">Services</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Web Development</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Mobile Apps</a></li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">SaaS Solutions</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">DevOps & Cloud</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="reveal-up hidden md:block">
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6">Legal</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Privacy Policy</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Terms of Service</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Cookie Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-100 dark:border-slate-800 pt-6 text-center text-sm text-slate-500">
+                &copy; <span id="copyright-year"></span> Vivago Digital. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Update Copyright
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+        // Reading Progress Bar Logic
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.getElementById('progress-bar').style.width = scrollPercent + '%';
+        });
+
+        // Animate elements on load
+        window.addEventListener('load', () => {
+            gsap.utils.toArray('.reveal-up').forEach((elem, i) => {
+                gsap.to(elem, {
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: "top 90%",
+                        once: true
+                    },
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    delay: i * 0.1,
+                    ease: "power2.out"
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

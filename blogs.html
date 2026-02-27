@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo.png">
+    <link rel="apple-touch-icon" href="assets/img/logo.png">
+
+    <!-- SEO & Metadata -->
+    <title>Tech Insights & Digital Innovation Blog | Vivago Digital</title>
+    <meta name="description"
+        content="Expert insights on web development, SaaS solutions, SEO strategies, and digital innovation. Learn from Bangladesh's leading digital agency - Vivago Digital.">
+    <meta name="keywords"
+        content="Tech Blog Bangladesh, Web Development Tips, SaaS Trends, Digital Strategy, SEO Guide, MicroCampus, LodgeOS, Vivago Digital Insights">
+    <meta name="author" content="Vivago Digital">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vivagodigital.com/blogs.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vivagodigital.com/blogs.html">
+    <meta property="og:title" content="Tech Insights & Digital Innovation Blog | Vivago Digital">
+    <meta property="og:description"
+        content="Expert insights on web development, SaaS, and digital innovation from Vivago Digital.">
+    <meta property="og:image" content="https://vivagodigital.com/assets/img/logo-700x380.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Tech Blog | Vivago Digital">
+    <meta property="twitter:description" content="Expert insights on web development and digital innovation.">
+    <meta property="twitter:image" content="https://vivagodigital.com/assets/img/logo-700x380.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Existing Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Existing Script (Loads Theme, Cursor, Liquid BG) -->
+    <script src="assets/js/script.js" defer></script>
+
+    <!-- Configure Tailwind for Dark Mode -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2563eb',
+                        'primary-dark': '#3b82f6',
+                        'accent': '#06b6d4',
+                        'dark': '#020617',
+                        'light': '#f8fafc',
+                        'surface': '#ffffff'
+                    },
+                    fontFamily: {
+                        'sans': ['Outfit', 'sans-serif'],
+                        'mono': ['Space Grotesk', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(37, 99, 235, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Blog Specific Styles */
+        .blog-card-image {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+
+        /* Category Badge Glow */
+        .category-badge:hover {
+            box-shadow: 0 0 15px currentColor;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-900 dark:bg-dark dark:text-slate-100 antialiased selection:bg-primary/20 selection:text-primary-dark">
+
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-jelly"></div>
+
+    <!-- Loading Screen -->
+    <div class="loader-overlay" id="loader">
+        <div class="flex flex-col items-center gap-4">
+            <div
+                class="w-12 h-12 border-4 border-slate-200 border-t-primary rounded-full animate-spin dark:border-slate-800 dark:border-t-primary-dark">
+            </div>
+            <div class="font-mono text-xs tracking-widest text-slate-400">LOADING INSIGHTS</div>
+        </div>
+    </div>
+
+    <!-- Liquid Background Canvas -->
+    <canvas id="liquidCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex justify-between items-center shadow-sm">
+            <a href="index.html" class="flex items-center gap-2 group hover-trigger">
+                <div class="w-32 h-8 rounded-lg flex items-center justify-center text-white font-bold text-lg"><img
+                        id="nav-logo" src="assets/img/black-text-logo.png" alt="Vivago Digital Logo"></div>
+                <!-- <span class="font-bold text-xl tracking-tight text-slate-800 dark:text-white">VIVAGO DIGITAL</span> -->
+            </a>
+
+            <div class="hidden md:flex items-center gap-1 font-medium text-sm text-slate-600 dark:text-slate-300">
+                <a href="index.html#about"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">About</a>
+                <a href="index.html#services"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Services</a>
+                <a href="index.html#projects"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Projects</a>
+                <a href="index.html#products"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Products</a>
+                <a href="team.html"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Team</a>
+                <a href="blogs.html"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Blogs</a>
+                <div class="w-px h-4 bg-slate-200 dark:bg-slate-700 mx-2"></div>
+
+                <!-- Dark Mode Toggle -->
+                <button id="themeToggle"
+                    class="hover-trigger magnetic-btn p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-all mr-2">
+                    <!-- Sun Icon (Visible in Dark Mode) -->
+                    <svg id="sunIcon" class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                        </path>
+                    </svg>
+                    <!-- Moon Icon (Hidden in Dark Mode) -->
+                    <svg id="moonIcon" class="w-5 h-5 text-slate-600 dark:text-slate-300 hidden" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                        </path>
+                    </svg>
+                </button>
+
+                <a href="contact-us.html"><button onclick="document.getElementById('contact').scrollIntoView()"
+                        class="hover-trigger magnetic-btn px-6 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full hover:bg-primary dark:hover:bg-primary-dark hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300 font-medium nav-desktop-item">
+                        Start Project
+                    </button></a>
+            </div>
+
+            <button class="md:hidden text-slate-800 dark:text-white" onclick="toggleMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+        class="fixed inset-0 z-40 bg-white/95 dark:bg-dark/95 backdrop-blur-xl -translate-y-full transition-transform duration-500 flex items-start justify-center pt-24">
+        <button class="absolute top-8 right-8 text-slate-800 dark:text-white" onclick="toggleMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="flex flex-col gap-8 text-center text-3xl font-bold text-slate-800 dark:text-white">
+            <a href="index.html#about" onclick="toggleMenu()" class="hover:text-primary transition-colors">About</a>
+            <a href="index.html#services" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors">Services</a>
+            <a href="index.html#projects" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors">Projects</a>
+            <a href="index.html#products" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors">Products</a>
+            <a href="team.html" onclick="toggleMenu()" class="hover:text-primary transition-colors">Team</a>
+            <a href="blogs.html" onclick="toggleMenu()" class="hover:text-primary transition-colors">Blogs</a>
+            <a href="contact-us.html" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">Contact</a>
+            <button onclick="toggleTheme(); toggleMenu()"
+                class="text-lg font-medium text-slate-500 dark:text-slate-400 menu-item">Switch Theme</button>
+        </div>
+    </div>
+
+    <!-- Blog Header -->
+    <header class="pt-40 pb-20 px-6 text-center">
+        <div class="container mx-auto max-w-4xl">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary dark:text-primary-dark text-xs font-bold tracking-widest uppercase mb-6 reveal-up">
+                Our Journal
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6 leading-tight reveal-up">
+                Insights for the <br> <span class="text-shimmer">Digital Age.</span>
+            </h1>
+            <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto reveal-up">
+                Deep dives into technology, design, and business growth. Written by our engineers and strategists.
+            </p>
+
+            <!-- Category Filter -->
+            <div class="mt-12 flex flex-wrap justify-center gap-4 reveal-up">
+                <button
+                    class="hover-trigger magnetic-btn px-6 py-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-sm shadow-lg">All
+                    Posts</button>
+                <button
+                    class="hover-trigger magnetic-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-medium text-sm hover:border-primary transition-all">Technology</button>
+                <button
+                    class="hover-trigger magnetic-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-medium text-sm hover:border-primary transition-all">Design</button>
+                <button
+                    class="hover-trigger magnetic-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-medium text-sm hover:border-primary transition-all">Business</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Grid -->
+    <section class="pb-32 px-6">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Blog Post 1 -->
+                <article
+                    class="group hover-trigger glass-panel rounded-3xl overflow-hidden border border-white/50 dark:border-white/5 hover:border-primary/50 transition-all duration-300 reveal-up">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800"
+                            alt="Coding"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="category-badge px-3 py-1 bg-primary/90 text-white text-xs font-bold rounded-full backdrop-blur-md">TECHNOLOGY</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 text-xs font-mono text-slate-500 dark:text-slate-400 mb-4">
+                            <div class="flex items-center gap-2">
+                                <img src="assets/img/kazi-nowshad-abir.jpg" class="w-5 h-5 rounded-full object-cover"
+                                    alt="Author">
+                                <span class="font-bold text-slate-700 dark:text-slate-300">Kazi Nowshad Abir</span>
+                            </div>
+                            <span>•</span>
+                            <time datetime="2025-11-29">Nov 29, 2025</time>
+                        </div>
+                        <h2
+                            class="text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-primary dark:group-hover:text-primary-dark transition-colors line-clamp-2">
+                            MicroCampus: The Comprehensive, Modular School Management Platform
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6 line-clamp-3">
+                            A modular, enterprise-ready school management system that streamlines admissions,
+                            attendance, exams, finance and parent engagement for faster time-to-value.
+                        </p>
+                        <a href="microcampus-blog.html"
+                            class="inline-flex items-center text-primary dark:text-primary-dark font-bold hover:gap-2 transition-all">
+                            Read Article <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article
+                    class="group hover-trigger glass-panel rounded-3xl overflow-hidden border border-white/50 dark:border-white/5 hover:border-primary/50 transition-all duration-300 reveal-up"
+                    style="transition-delay: 0.1s;">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="assets/img/lodgeos.png" alt="LodgeOS Logo"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="category-badge px-3 py-1 bg-accent/90 text-white text-xs font-bold rounded-full backdrop-blur-md">HOSPITALITY</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 text-xs font-mono text-slate-500 dark:text-slate-400 mb-4">
+                            <div class="flex items-center gap-2">
+                                <img src="assets/img/kazi-nowshad-abir.jpg" class="w-5 h-5 rounded-full object-cover"
+                                    alt="Author">
+                                <span class="font-bold text-slate-700 dark:text-slate-300">Kazi Nowshad Abir</span>
+                            </div>
+                            <span>•</span>
+                            <time datetime="2024-03-15">Mar 15, 2024</time>
+                        </div>
+                        <h2
+                            class="text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-accent transition-colors line-clamp-2">
+                            LodgeOS: Hotel Management Reimagined
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6 line-clamp-3">
+                            LodgeOS helps hotels, guesthouses and lodges manage bookings, front-desk operations,
+                            housekeeping, billing and channel management from a single modern platform.
+                        </p>
+                        <a href="lodgeos-blog.html"
+                            class="inline-flex items-center text-accent font-bold hover:gap-2 transition-all">
+                            Read Article <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article
+                    class="group hover-trigger glass-panel rounded-3xl overflow-hidden border border-white/50 dark:border-white/5 hover:border-primary/50 transition-all duration-300 reveal-up"
+                    style="transition-delay: 0.2s; display: none;">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1553877615-30c730d4b635?auto=format&fit=crop&q=80&w=800"
+                            alt="Business"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="category-badge px-3 py-1 bg-purple-600/90 text-white text-xs font-bold rounded-full backdrop-blur-md">BUSINESS</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 text-xs font-mono text-slate-500 dark:text-slate-400 mb-4">
+                            <div class="flex items-center gap-2">
+                                <img src="assets/img/kazi-nowshad-abir.jpg" class="w-5 h-5 rounded-full object-cover"
+                                    alt="Author">
+                                <span class="font-bold text-slate-700 dark:text-slate-300">Kazi Nowshad Abir</span>
+                            </div>
+                            <span>•</span>
+                            <time datetime="2024-02-28">Feb 28, 2024</time>
+                        </div>
+                        <h2
+                            class="text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-purple-500 transition-colors line-clamp-2">
+                            Scaling Your Startup: From MVP to Enterprise
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6 line-clamp-3">
+                            A strategic roadmap for startup founders. Learn how to transition your product from a
+                            proof-of-concept to a scalable solution ready for enterprise clients.
+                        </p>
+                        <a href="article.html"
+                            class="inline-flex items-center text-purple-500 font-bold hover:gap-2 transition-all">
+                            Read Article <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article
+                    class="group hover-trigger glass-panel rounded-3xl overflow-hidden border border-white/50 dark:border-white/5 hover:border-primary/50 transition-all duration-300 reveal-up"
+                    style="display: none;">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800"
+                            alt="Security"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="category-badge px-3 py-1 bg-primary/90 text-white text-xs font-bold rounded-full backdrop-blur-md">TECHNOLOGY</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 text-xs font-mono text-slate-500 dark:text-slate-400 mb-4">
+                            <div class="flex items-center gap-2">
+                                <img src="assets/img/kazi-nowshad-abir.jpg" class="w-5 h-5 rounded-full object-cover"
+                                    alt="Author">
+                                <span class="font-bold text-slate-700 dark:text-slate-300">Kazi Nowshad Abir</span>
+                            </div>
+                            <span>•</span>
+                            <time datetime="2024-02-15">Feb 15, 2024</time>
+                        </div>
+                        <h2
+                            class="text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-primary dark:group-hover:text-primary-dark transition-colors line-clamp-2">
+                            Cybersecurity Best Practices for 2024
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6 line-clamp-3">
+                            With cyber threats evolving rapidly, standard firewalls aren't enough. Here is our
+                            comprehensive guide to securing your digital infrastructure in the modern era.
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center text-primary dark:text-primary-dark font-bold hover:gap-2 transition-all">
+                            Read Article <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Pagination / Load More -->
+            <div class="mt-20 text-center reveal-up">
+                <button
+                    class="hover-trigger magnetic-btn px-8 py-3 bg-transparent border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white rounded-full font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+                    Load More Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div
+                class="glass-panel rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden border border-white/50 dark:border-white/10 reveal-up">
+                <!-- Decoration -->
+                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary/5 to-accent/5 -z-10">
+                </div>
+
+                <span
+                    class="font-mono text-primary dark:text-primary-dark text-sm font-bold tracking-widest uppercase mb-4 block">Stay
+                    Updated</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+                    Join our Digital Digest
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto mb-10 text-lg">
+                    Get the latest tech insights, design trends, and Vivago news delivered straight to your inbox. No
+                    spam, just value.
+                </p>
+
+                <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                    <input type="email" placeholder="Enter your email address"
+                        class="flex-grow px-6 py-4 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-primary dark:focus:border-primary-dark transition-colors">
+                    <button
+                        class="hover-trigger magnetic-btn px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-bold hover:bg-primary dark:hover:bg-primary-dark dark:hover:text-white transition-all shadow-lg whitespace-nowrap">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        class="bg-white/90 dark:bg-dark/90 pt-12 md:pt-24 pb-6 md:pb-12 border-t border-slate-100 dark:border-slate-800 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8 md:mb-16">
+                <div class="col-span-1 reveal-up">
+                    <a href="index.html" class="flex items-center gap-2 group mb-4">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-glow">
+                            <img src="assets/img/logo.png" alt="Vivago Logo" class="w-10 h-10 md:w-12 md:h-12">
+                        </div>
+                        <span class="font-bold text-lg md:text-xl tracking-tight text-slate-800 dark:text-white">VIVAGO
+                            DIGITAL</span>
+                    </a>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                        Engineering digital excellence through innovation, precision, and partnership.
+                    </p>
+                    <div class="flex gap-3">
+                        <!-- Social Placeholders -->
+                        <div
+                            class="hover-trigger magnetic-btn w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all cursor-pointer">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.56v14.9c0 2.5-2.06 4.54-4.57 4.54H4.57C2.07 24 0 21.96 0 19.46V4.56C0 2.06 2.06 0 4.57 0h14.86C21.94 0 24 2.06 24 4.56zM7.34 20.6h3.42v-10h-3.42v10zM9.06 9.17c-1.1 0-1.99-.9-1.99-1.99 0-1.09.89-1.99 1.99-1.99 1.1 0 2 .9 2 1.99 0 1.1-.9 1.99-2 1.99zm11.53 11.43v-5.64c0-2.78-1.48-4.08-3.46-4.08-1.6 0-2.31.88-2.71 1.5v-1.28h-3.41c.04.99 0 10.03 0 10.03h3.41v-5.6c0-.3.02-.6.11-.82.24-.6.79-1.22 1.71-1.22.85 0 1.19.64 1.19 1.58v5.53h3.41z" />
+                            </svg>
+                        </div>
+                        <div
+                            class="hover-trigger magnetic-btn w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all cursor-pointer">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-up hidden md:block">
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6">Company</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="#about" class="hover-trigger hover:text-primary transition-colors">About Us</a>
+                        </li>
+                        <li><a href="#projects" class="hover-trigger hover:text-primary transition-colors">Case
+                                Studies</a></li>
+                        <li><a href="#careers" class="hover-trigger hover:text-primary transition-colors">Careers</a>
+                        </li>
+                        <li><a href="#contact" class="hover-trigger hover:text-primary transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="reveal-up hidden md:block">
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6">Services</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Web Development</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Mobile Apps</a></li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">SaaS Solutions</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">DevOps & Cloud</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="reveal-up hidden md:block">
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6">Legal</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Privacy Policy</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Terms of Service</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Cookie Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-100 dark:border-slate-800 pt-6 text-center text-sm text-slate-500">
+                &copy; <span id="copyright-year"></span> Vivago Digital. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inline Script for Page Specific Behavior -->
+    <script>
+        // Update Copyright
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+        // Animate elements on load
+        window.addEventListener('load', () => {
+            gsap.utils.toArray('.reveal-up').forEach((elem, i) => {
+                gsap.to(elem, {
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: "top 90%",
+                        once: true
+                    },
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    delay: i * 0.1, // Stagger effect
+                    ease: "power2.out"
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

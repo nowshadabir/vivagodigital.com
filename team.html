@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo.png">
+    <link rel="apple-touch-icon" href="assets/img/logo.png">
+
+    <!-- SEO & Metadata -->
+    <title>Our Team - Meet the Digital Warriors | Vivago Digital</title>
+    <meta name="description"
+        content="Meet the talented team behind Vivago Digital. Co-founders Ahmed Imtiaz, Kazi Nowshad Abir, and SEO expert Shaheer leading digital innovation in Cox's Bazar, Bangladesh.">
+    <meta name="keywords"
+        content="Vivago Digital Team, Ahmed Imtiaz, Kazi Nowshad Abir, Shaheer, Digital Agency Team, Web Developers Bangladesh">
+    <meta name="author" content="Vivago Digital">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vivagodigital.com/team.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vivagodigital.com/team.html">
+    <meta property="og:title" content="Our Team - Meet the Digital Warriors | Vivago Digital">
+    <meta property="og:description"
+        content="Meet the talented team behind Vivago Digital leading digital innovation in Bangladesh.">
+    <meta property="og:image" content="https://vivagodigital.com/assets/img/logo-700x380.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Our Team | Vivago Digital">
+    <meta property="twitter:description" content="Meet the talented team behind Vivago Digital.">
+    <meta property="twitter:image" content="https://vivagodigital.com/assets/img/logo-700x380.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Existing Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Existing Script -->
+    <script src="assets/js/script.js" defer></script>
+
+    <!-- Configure Tailwind -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2563eb',
+                        'primary-dark': '#3b82f6',
+                        'accent': '#06b6d4',
+                        'dark': '#020617',
+                        'light': '#f8fafc',
+                        'surface': '#ffffff'
+                    },
+                    fontFamily: {
+                        'sans': ['Outfit', 'sans-serif'],
+                        'mono': ['Space Grotesk', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(37, 99, 235, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* New Creative Card Styles */
+        .warrior-card {
+            height: 500px;
+            /* Tall, cinematic aspect ratio */
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .warrior-image {
+            filter: grayscale(100%) contrast(110%);
+            transition: all 0.6s ease;
+        }
+
+        .warrior-card:hover .warrior-image {
+            filter: grayscale(0%) contrast(100%);
+            transform: scale(1.05);
+        }
+
+        /* The Focus Frame Effect */
+        .focus-corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-color: #2563eb;
+            /* Primary Blue */
+            transition: all 0.4s ease;
+            opacity: 0;
+        }
+
+        .warrior-card:hover .focus-corner {
+            opacity: 1;
+            width: 40px;
+            height: 40px;
+        }
+
+        .c-tl {
+            top: 20px;
+            left: 20px;
+            border-top: 2px solid;
+            border-left: 2px solid;
+        }
+
+        .c-tr {
+            top: 20px;
+            right: 20px;
+            border-top: 2px solid;
+            border-right: 2px solid;
+        }
+
+        .c-bl {
+            bottom: 20px;
+            left: 20px;
+            border-bottom: 2px solid;
+            border-left: 2px solid;
+        }
+
+        .c-br {
+            bottom: 20px;
+            right: 20px;
+            border-bottom: 2px solid;
+            border-right: 2px solid;
+        }
+
+        /* Expanding the corners on hover */
+        .warrior-card:hover .c-tl {
+            top: 15px;
+            left: 15px;
+        }
+
+        .warrior-card:hover .c-tr {
+            top: 15px;
+            right: 15px;
+        }
+
+        .warrior-card:hover .c-bl {
+            bottom: 15px;
+            left: 15px;
+        }
+
+        .warrior-card:hover .c-br {
+            bottom: 15px;
+            right: 15px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-900 dark:bg-dark dark:text-slate-100 antialiased selection:bg-primary/20 selection:text-primary-dark">
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-jelly"></div>
+
+    <!-- Loading Screen -->
+    <div class="loader-overlay" id="loader">
+        <div class="flex flex-col items-center gap-4">
+            <div
+                class="w-12 h-12 border-4 border-slate-200 border-t-primary rounded-full animate-spin dark:border-slate-800 dark:border-t-primary-dark">
+            </div>
+            <div class="font-mono text-xs tracking-widest text-slate-400">ASSEMBLING SQUAD</div>
+        </div>
+    </div>
+
+    <!-- Liquid Background -->
+    <canvas id="liquidCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex justify-between items-center shadow-sm">
+            <a href="index.html" class="flex items-center gap-2 group hover-trigger">
+                <div class="w-32 h-8 rounded-lg flex items-center justify-center text-white font-bold text-lg"><img
+                        id="nav-logo" src="assets/img/black-text-logo.png" alt="Vivago Digital Logo"></div>
+                <!-- <span class="font-bold text-xl tracking-tight text-slate-800 dark:text-white">VIVAGO DIGITAL</span> -->
+            </a>
+
+            <div class="hidden md:flex items-center gap-1 font-medium text-sm text-slate-600 dark:text-slate-300">
+                <a href="index.html#about"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">About</a>
+                <a href="index.html#services"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Services</a>
+                <a href="index.html#projects"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Projects</a>
+                <a href="index.html#products"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Products</a>
+                <a href="team.html"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Team</a>
+                <a href="blogs.html"
+                    class="hover-trigger magnetic-btn px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 hover:text-primary dark:hover:text-primary-dark transition-all nav-desktop-item">Blogs</a>
+                <div class="w-px h-4 bg-slate-200 dark:bg-slate-700 mx-2"></div>
+
+                <!-- Dark Mode Toggle -->
+                <button id="themeToggle"
+                    class="hover-trigger magnetic-btn p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-all mr-2">
+                    <!-- Sun Icon (Visible in Dark Mode) -->
+                    <svg id="sunIcon" class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                        </path>
+                    </svg>
+                    <!-- Moon Icon (Hidden in Dark Mode) -->
+                    <svg id="moonIcon" class="w-5 h-5 text-slate-600 dark:text-slate-300 hidden" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                        </path>
+                    </svg>
+                </button>
+
+                <a href="contact-us.html"><button onclick="document.getElementById('contact').scrollIntoView()"
+                        class="hover-trigger magnetic-btn px-6 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full hover:bg-primary dark:hover:bg-primary-dark hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300 font-medium nav-desktop-item">
+                        Start Project
+                    </button></a>
+            </div>
+
+            <button class="md:hidden text-slate-800 dark:text-white" onclick="toggleMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+        class="fixed inset-0 z-40 bg-white/95 dark:bg-dark/95 backdrop-blur-xl -translate-y-full transition-transform duration-500 flex items-start justify-center pt-24">
+        <button class="absolute top-8 right-8 text-slate-800 dark:text-white" onclick="toggleMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="flex flex-col gap-8 text-center text-3xl font-bold text-slate-800 dark:text-white">
+            <a href="index.html#about" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">About</a>
+            <a href="index.html#services" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">Services</a>
+            <a href="index.html#projects" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">Projects</a>
+            <a href="index.html#products" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">Products</a>
+            <a href="team.html" onclick="toggleMenu()" class="hover:text-primary transition-colors menu-item">Team</a>
+            <a href="blogs.html" onclick="toggleMenu()" class="hover:text-primary transition-colors menu-item">Blogs</a>
+            <a href="contact-us.html" onclick="toggleMenu()"
+                class="hover:text-primary transition-colors menu-item">Contact</a>
+            <button onclick="toggleTheme(); toggleMenu()"
+                class="text-lg font-medium text-slate-500 dark:text-slate-400 menu-item">Switch Theme</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="pt-40 pb-20 px-6 text-center">
+        <div class="container mx-auto max-w-4xl">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary dark:text-primary-dark text-xs font-bold tracking-widest uppercase mb-6 reveal-up">
+                Leadership
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6 leading-tight reveal-up">
+                Meet the <br> <span class="text-shimmer">Digital Warriors.</span>
+            </h1>
+            <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto reveal-up">
+                We are the minds behind the machines. A collective of architects, engineers, and strategists dedicated
+                to your digital dominance.
+            </p>
+        </div>
+    </header>
+
+    <!-- Team Grid -->
+    <section class="pb-32 px-6">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Warrior 1: Imtiaz -->
+                <div
+                    class="warrior-card group relative bg-white dark:bg-slate-900 rounded-[2rem] overflow-hidden shadow-xl reveal-up">
+                    <!-- Image Area -->
+                    <div class="absolute inset-0">
+                        <img src="assets/img/imtiaz.jpeg" alt="Imtiaz" class="warrior-image w-full h-full object-cover">
+                        <!-- Dark Gradient Overlay for text readability -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent"></div>
+                    </div>
+
+                    <!-- Focus Corners (The "New/Creative" Element) -->
+                    <div class="focus-corner c-tl"></div>
+                    <div class="focus-corner c-tr"></div>
+                    <div class="focus-corner c-bl"></div>
+                    <div class="focus-corner c-br"></div>
+
+                    <!-- Content -->
+                    <div class="absolute bottom-0 left-0 w-full p-8 z-10">
+                        <div
+                            class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                            <h2 class="text-4xl font-bold text-white mb-1 tracking-tight">Imtiaz</h2>
+                            <p
+                                class="text-primary font-mono text-sm tracking-widest uppercase mb-6 border-l-2 border-primary pl-3">
+                                Co-Founder & CEO</p>
+
+                            <!-- Hidden Socials that slide up -->
+                            <div
+                                class="flex gap-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                    </svg>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-sky-500 hover:border-sky-500 transition-all">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warrior 2: Abir -->
+                <div class="warrior-card group relative bg-white dark:bg-slate-900 rounded-[2rem] overflow-hidden shadow-xl reveal-up"
+                    style="transition-delay: 0.1s;">
+                    <div class="absolute inset-0">
+                        <img src="assets/img/kazi-nowshad-abir.jpg" alt="Abir"
+                            class="warrior-image w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent"></div>
+                    </div>
+
+                    <div class="focus-corner c-tl"></div>
+                    <div class="focus-corner c-tr"></div>
+                    <div class="focus-corner c-bl"></div>
+                    <div class="focus-corner c-br"></div>
+
+                    <div class="absolute bottom-0 left-0 w-full p-8 z-10">
+                        <div
+                            class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                            <h2 class="text-4xl font-bold text-white mb-1 tracking-tight">Abir</h2>
+                            <p
+                                class="text-accent font-mono text-sm tracking-widest uppercase mb-6 border-l-2 border-accent pl-3">
+                                Co-Founder & MD</p>
+
+                            <div
+                                class="flex gap-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                    </svg>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-sky-500 hover:border-sky-500 transition-all">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warrior 3: Shaheer -->
+                <div class="warrior-card group relative bg-white dark:bg-slate-900 rounded-[2rem] overflow-hidden shadow-xl reveal-up"
+                    style="transition-delay: 0.2s;">
+                    <div class="absolute inset-0">
+                        <img src="assets/img/shaheer.jpg" alt="Shaheer"
+                            class="warrior-image w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent"></div>
+                    </div>
+
+                    <div class="focus-corner c-tl"></div>
+                    <div class="focus-corner c-tr"></div>
+                    <div class="focus-corner c-bl"></div>
+                    <div class="focus-corner c-br"></div>
+
+                    <div class="absolute bottom-0 left-0 w-full p-8 z-10">
+                        <div
+                            class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                            <h2 class="text-4xl font-bold text-white mb-1 tracking-tight">Shaheer</h2>
+                            <p
+                                class="text-purple-500 font-mono text-sm tracking-widest uppercase mb-6 border-l-2 border-purple-500 pl-3">
+                                Off Page SEO Expert</p>
+
+                            <div
+                                class="flex gap-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                    </svg>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-sky-500 hover:border-sky-500 transition-all">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        class="bg-white/90 dark:bg-dark/90 pt-12 md:pt-24 pb-6 md:pb-12 border-t border-slate-100 dark:border-slate-800 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8 md:mb-16">
+                <div class="col-span-1 reveal-up">
+                    <a href="index.html" class="flex items-center gap-2 group mb-4">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-glow">
+                            <img src="assets/img/logo.png" alt="Vivago Logo" class="w-10 h-10 md:w-12 md:h-12"></div>
+                        <span class="font-bold text-lg md:text-xl tracking-tight text-slate-800 dark:text-white">VIVAGO
+                            DIGITAL</span>
+                    </a>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                        Engineering digital excellence through innovation, precision, and partnership.
+                    </p>
+                    <div class="flex gap-3">
+                        <!-- Social Placeholders -->
+                        <div
+                            class="hover-trigger magnetic-btn w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all cursor-pointer">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.56v14.9c0 2.5-2.06 4.54-4.57 4.54H4.57C2.07 24 0 21.96 0 19.46V4.56C0 2.06 2.06 0 4.57 0h14.86C21.94 0 24 2.06 24 4.56zM7.34 20.6h3.42v-10h-3.42v10zM9.06 9.17c-1.1 0-1.99-.9-1.99-1.99 0-1.09.89-1.99 1.99-1.99 1.1 0 2 .9 2 1.99 0 1.1-.9 1.99-2 1.99zm11.53 11.43v-5.64c0-2.78-1.48-4.08-3.46-4.08-1.6 0-2.31.88-2.71 1.5v-1.28h-3.41c.04.99 0 10.03 0 10.03h3.41v-5.6c0-.3.02-.6.11-.82.24-.6.79-1.22 1.71-1.22.85 0 1.19.64 1.19 1.58v5.53h3.41z" />
+                            </svg>
+                        </div>
+                        <div
+                            class="hover-trigger magnetic-btn w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all cursor-pointer">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-up hidden md:block">
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6">Company</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="#about" class="hover-trigger hover:text-primary transition-colors">About Us</a>
+                        </li>
+                        <li><a href="#projects" class="hover-trigger hover:text-primary transition-colors">Case
+                                Studies</a></li>
+                        <li><a href="#careers" class="hover-trigger hover:text-primary transition-colors">Careers</a>
+                        </li>
+                        <li><a href="#contact" class="hover-trigger hover:text-primary transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="reveal-up hidden md:block">
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6">Services</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Web Development</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Mobile Apps</a></li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">SaaS Solutions</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">DevOps & Cloud</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="reveal-up hidden md:block">
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6">Legal</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Privacy Policy</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Terms of Service</a>
+                        </li>
+                        <li><a href="#" class="hover-trigger hover:text-primary transition-colors">Cookie Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-100 dark:border-slate-800 pt-6 text-center text-sm text-slate-500">
+                &copy; <span id="copyright-year"></span> Vivago Digital. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inline Script for Page Specific Behavior -->
+    <script>
+        // Update Copyright
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+        // Animate elements on load
+        window.addEventListener('load', () => {
+            gsap.utils.toArray('.reveal-up').forEach((elem, i) => {
+                gsap.to(elem, {
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: "top 90%",
+                        once: true
+                    },
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    delay: i * 0.1,
+                    ease: "power2.out"
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
